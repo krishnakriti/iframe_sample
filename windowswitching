@@ -1,0 +1,27 @@
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+import time
+
+driver = webdriver.Chrome("C:\\Users\\krishna.kriti\\Downloads\\chromedriver_win32\\chromedriver")
+
+driver.get("https://www.naukri.com/")
+driver.maximize_window()
+time.sleep(3)
+window_before = driver.window_handles[0]
+
+window_tittle1 = driver.title
+print("1st Tittle:" + str(window_tittle1))
+
+window_after = driver.window_handles[1]
+driver.switch_to.window(window_after)
+
+window_title2 = driver.title
+print("2nd Tittle:" + str(window_title2))
+time.sleep(5)
+
+window_after = driver.window_handles[2]
+driver.switch_to.window(window_after)
+
+window_title3 = driver.title
+print("3rd Tittle:" + str(window_title3))
+time.sleep(5)
